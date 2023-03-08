@@ -1,4 +1,4 @@
-class Pes():
+class Pes:
 	""" Trida psu """
 
 	""" Zvuk psa """
