@@ -38,12 +38,13 @@ class Semestr:
                 if delta.days <= ndays:
                     print(f'Pozor! Zkouska z predmetu {p.nazev} za {delta.days} dnu!!!!')
 
-p1 = Predmet('Lin. algebra','5.3.2023')
-p2 = Predmet('Analyza','10.6.2023')
-p3 = Predmet('Fyzika 1', '16.6.2023')
+if __name__ == '__main__':
+    p1 = Predmet('Lin. algebra','5.3.2023')
+    p2 = Predmet('Analyza','10.6.2023')
+    p3 = Predmet('Fyzika 1', '16.6.2023')
 
-s = Semestr([p1, p2, p3])
-print('Vypis predmetu:')
-s.vypis_predmety()
-print()
-s.terminy(95)
+    s = Semestr([p1, p2, p3])
+    print('Vypis predmetu:')
+    s.vypis_predmety()
+    print()
+    s.terminy(95)
