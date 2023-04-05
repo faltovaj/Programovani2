@@ -42,7 +42,7 @@ class Lss:
         """
         p = self.prvni
         # Osetreni pradneho seznamu
-        if (p == None):
+        if p == None:
             print('PRAZDNY')
             return
         while p != None:
@@ -51,9 +51,20 @@ class Lss:
         print()
 
 if __name__ == '__main__':
-    print('Vytvoreni objektu LSS')
-    ls = Lss()
+    print('Prvni test: vytvoreni LSS')
+    ls1 = Lss()
     print('Zadejte cisla do LSS (ukonceni vstupu -1): ')
-    ls.vytvor()
+    ls1.vytvor()
     print('Vypsani LSS')
-    ls.vypis()
+    ls1.vypis()
+
+    print()
+    print('Druhy test: predame uz existujici seznam')
+    p1 = Uzel(100)
+    print(f'Prvni hodnota {p1.hodnota}')
+    p2 = Uzel(200)
+    print(f'Druha hodnota {p2.hodnota}')
+    p1.dalsi = p2
+    ls2 = Lss(p1)
+    print('Vypsani LSS')
+    ls2.vypis()

@@ -11,7 +11,6 @@ class Hlava(Uzel):
     Hlava: prvni (prazdny) prvek spojoveho seznamu
     """
     def __init__(self):
-        self.hodnota = None
         self.dalsi = None
 
 class Lss:
@@ -19,20 +18,19 @@ class Lss:
     linearni spojovy seznam s hlavou
     atribut 'prvni' odkazuje na prvni uzel v lss
     """
-    def __init__(self, prvni = None):
+    def __init__(self):
         """
-        Pokud uz mame LSS vytvoreny, mohu ho predat odkazem
-        V tomto pripade predpokladame, ze odkazuje na hlavu
+        Nastaveni prvniho clenu na Hlavu
         """
-        self.prvni = prvni
+        self.prvni = Hlava
 
     def vytvor(self):
         """
         LSS je zadan na vstupu po jednotlivych cislech,
         ukonceni vstupu -1
         """
-        self.prvni = Hlava()
         # posledni: ukazatel na posledni prvek (tam budu pridavat)
+        # self.prvni v tuto chvili odkazuje na Hlavu
         posledni = self.prvni
         cislo = int(input())
         while cislo != -1:
@@ -48,7 +46,7 @@ class Lss:
         # Zacneme nasledovnikem hlavy
         p = self.prvni.dalsi
         # Osetreni prazdneho seznamu
-        if (p == None):
+        if p == None:
             print('PRAZDNY')
             return
         while p != None:
