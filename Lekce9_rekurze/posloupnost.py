@@ -7,8 +7,8 @@ def posloupnost1(seznam, N):
 	if N == 0:
 		print(seznam)
 	else:
-		posloupnosti(seznam + [1], N-1)
-		posloupnosti(seznam + [0], N-1)
+		posloupnost1(seznam + [1], N-1)
+		posloupnost1(seznam + [0], N-1)
 
 
 # S vyuzitim globalni promenne (nekopirujeme seznamy pri kazdem volani)
