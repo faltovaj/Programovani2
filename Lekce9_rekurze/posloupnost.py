@@ -1,3 +1,8 @@
+"""
+Posloupnosti cisel 0 a 1 delky n
+- vygenerovani
+- urceni poctu
+"""
 def posloupnost1(seznam, N):
 	if N == 0:
 		print(seznam)
