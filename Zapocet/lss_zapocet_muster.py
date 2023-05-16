@@ -1,12 +1,3 @@
-"""
-Napište funkci, která z daného lineárního spojového seznamu celých čísel vynechá všechny prvky
-obsahující číslo dělitelné pěti. Např. ze seznamu 1, 5, 10, 7, 5 tak vznikne upravený seznam 1, 7.
-
-Napište funkci, která z daného lineárního spojového seznamu celých čísel vynechá všechny takové
-prvky, které obsahují stejné číslo jako některý předcházející prvek seznamu. Výsledný seznam tedy
-bude obsahovat všechna čísla jako původní seznam, ale každé z nich pouze jednou (zachová se vždy
-první výskyt čísla). Např. ze seznamu 1, 4, 4, 4, 5, 4, 9, 9 tak vznikne upravený seznam 1, 4, 5, 9
-"""
 class Uzel:
 	"""Uzel spojoveho seznamu """
 	def __init__(self, x=None):
