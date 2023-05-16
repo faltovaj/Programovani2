@@ -21,22 +21,23 @@ def vytvor():
 def vypis(p):
 	""" Funkce vypise hodnoty v linearnim 
 	spojovem seznamu """
-    if p == None:
-        print('PRAZDNY')
-        return
-    s = p
-    while s != None:
-        print(s.info, end = " ")
-        s = s.dalsi
-    print()
-
+	if p == None:
+		print('PRAZDNY')
+		return
+	s = p
+	while s != None:
+		print(s.info, end = " ")
+		s = s.dalsi
+	print()
 
 def vynech_delitelne(p, n):
 	#TODO
+	pass
 
 def vynech_stejne(p):
 	#TODO
-
+	pass
+	
 a = vytvor()
 vypis(a)
 a = vynech_delitelne(a, 5)
