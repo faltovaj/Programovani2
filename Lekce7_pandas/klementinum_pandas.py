@@ -15,17 +15,20 @@ https://www.chmi.cz/historicka-data/pocasi/praha-klementinum
 # Nacteni knihoven
 import pandas as pd
 from matplotlib import pyplot as plt
+import numpy as np
 
 # Naceteme data z listu s nazvem data
 # df: dataframe
 df = pd.read_excel('PKLM_pro_portal.xlsx', sheet_name= 'data')
 
-print('Info: ', df.info())
+#print('Info: ', df.info())
+
 
 # Nazvy sloupcu
 print('Nazvy sloupcu:', df.columns)
 # tail(10): vypis poslednich 10-ti radku
 # head(10): vypis prvnich 10-ti radku
+print(df.tail(10))
 print(df['T-AVG'].tail(10))
 
 # Vypsani statistickych udaju o prumerne teplote
@@ -44,13 +47,12 @@ filt = (df['rok']==2021) & (df['měsíc']==3)   # and, or in python -> &, | in P
 # Vypiseme data, co splnuji podminku (filter)
 print(df.loc[filt])
 
-# Vypsani pouze sloupcu den, prumerna, maximalni a minimalni teplota v breznu 2021 
-print(df.loc[filt, ['den', 'T-AVG', 'TMA', 'TMI']])
+# Vypsani pouze sloupcu prumerna, maximalni a minimalni teplota v breznu 2021 
+print(df.loc[filt, ['T-AVG', 'TMA', 'TMI']])
 
 # Zjisteni prumeru prumerne, max. a min. teploty v breznu 2021 
-print('Prumer teplot v breznu 2021')
 print(df.loc[filt, ['T-AVG', 'TMA', 'TMI']].mean())
-
+"""
 # Vykresleni obrazku
 # Vykreslime zavislost prumerne, minimalni a maximalni teploty na dnu
 # v mesici breznu v roce 2021
@@ -65,8 +67,14 @@ plt.ylabel('T')
 plt.show()
 # Ulozeni obrazku
 plt.savefig('teplota.png')
-
-
+"""
 """
 # Deleni po skupinach: vyzkousejte metodu groupby
 """
+#group_mesic = df.groupby('měsíc')
+#print(group_mesic['T-AVG'].describe())
+#plt.plot(group_mesic['T-AVG'].mean())
+df.groupby(['měsíc'])[['T-AVG', 'TMA', 'TMI']].agg(np.mean).plot()
+plt.xlabel('mesic')
+plt.ylabel('<teplota>')
+plt.show()
